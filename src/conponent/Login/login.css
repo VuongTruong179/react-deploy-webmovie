@@ -1,0 +1,15 @@
+.hewader-login {
+    margin-left: 0px
+}
+
+.title-movies p {
+    margin-bottom: 15px;
+}
+
+.form-label,
+.title-movies p,
+.text-mut,
+.form-check-label,
+form p {
+    color: #f5fafe;
+}

@@ -1,0 +1,58 @@
+.watch-movies-left {
+    margin-top: 1rem;
+    margin-bottom: 2px;
+}
+
+.img-main {
+    opacity: 0.4;
+    filter: alpha(opacity=50)
+}
+
+.img-detail {
+    position: relative
+}
+
+.container-detail {
+    margin-top: -200px;
+
+}
+
+.movies-left .followed {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+.movies-right {
+    height: 19rem;
+    background-color: #222222;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.text-block h1,
+.text-block p,
+.text-block h3 {
+    color: white;
+}
+
+.text-block button {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 770px) {
+    .detail-left {
+        text-align: center;
+    }
+
+    .img-detail {
+        width: 12.5rem;
+        height: 17.5rem;
+    }
+
+    .movies-right {
+        height: auto;
+    }
+
+
+}

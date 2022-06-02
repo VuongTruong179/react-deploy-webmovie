@@ -1,0 +1,66 @@
+.cast-title {
+    margin-top: 1rem;
+    color: white;
+    font-family: Source Sans Pro;
+    font-weight: 600;
+
+}
+
+.list-movie {
+    background-color: #222222;
+    overflow: auto;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.rowcontain-cast-main {
+    width: 180px;
+    float: left;
+    margin: 8px;
+    border-radius: 10px;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, .1);
+}
+
+.img-cast {
+    border-radius: 1rem;
+    height: 15rem;
+
+}
+
+.contain-cast {
+    margin: 0.5rem;
+    display: inline-block;
+
+}
+
+.child {
+    display: block;
+    height: 95px;
+    line-height: 1.2;
+}
+
+.child p {
+    white-space: normal;
+    color: white;
+    font-family: Source Sans Pro;
+    padding: 5px;
+}
+
+.title-name {
+    font-weight: 700
+}
+
+.title-name:hover {
+    color: #6ABCEA;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d6d1d1;
+    border-radius: 10px;
+}

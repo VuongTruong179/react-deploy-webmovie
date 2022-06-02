@@ -1,0 +1,17 @@
+@media screen and (max-width: 800px) {
+    .create-lerf {
+        display: none;
+    }
+}
+
+.create-lerf {
+    margin-top: 2rem;
+}
+
+.container-create-lerf {
+    border: 1px solid rgba(0, 0, 0, .125);
+}
+
+.list-group-item {
+    border: none
+}

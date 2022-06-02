@@ -1,0 +1,41 @@
+.title-left {
+    margin: 4px 0;
+}
+
+.title-right {
+    margin: 3px 0;
+}
+
+.container-bottom-left,
+.container-bottom-right {
+    background-color: white;
+}
+
+.container-bottom {
+    display: flex;
+}
+
+.card-img-bottom {
+    width: 5rem;
+    height: 6rem;
+}
+
+.card-body .card-text {
+    margin-left: 2px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+    .container-bottom-right {
+        margin-left: 0.3rem;
+
+    }
+}
+
+@media (max-width: 576px) {
+    .container-bottom-right {
+        margin-top: 1rem;
+
+    }
+}

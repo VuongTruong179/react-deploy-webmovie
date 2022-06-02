@@ -1,0 +1,34 @@
+body {
+    background: url(https://tumanhwas.club/bg.jpeg)
+}
+
+.navbar {
+    background: linear-gradient(to right, #006cc2 40%, #2196f3);
+}
+
+.dropdown-item {
+    color: black;
+    font-family: Source Sans Pro;
+    font-weight: 600;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-brand {
+    color: white;
+    font-family: Source Sans Pro;
+    font-weight: 600;
+    /* border: #032541; */
+}
+
+.dropdown-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.container a {
+    text-decoration: none;
+}
+
+.nav-link a {
+    color: white;
+}
