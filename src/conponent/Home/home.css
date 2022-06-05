@@ -1,0 +1,11 @@
+@media (min-width: 800px) {
+    .container-slier {
+        height: 20rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-slier {
+        height: 23rem;
+    }
+}

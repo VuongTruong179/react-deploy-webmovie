@@ -47,7 +47,14 @@
 }
 
 .title-name {
-    font-weight: 700
+    width: 10rem;
+    height: 4rem;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Source Sans Pro;
+    font-weight: 700;
 }
 
 .title-name:hover {

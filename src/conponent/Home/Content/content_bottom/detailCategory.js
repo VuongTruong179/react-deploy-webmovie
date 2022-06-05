@@ -32,7 +32,7 @@ class DetailMovieOfCategory extends React.Component {
                                     link={"/detailMovie"}
                                     index={"20"}
                                     number={1}
-                                    col={"col-xl-4 col-lg-4 col-md-12  col-sm-4 col-4"}
+                                    col={"col-xl-2 col-lg-2 col-md-3 col-sm-4 col-4"}
                                 />
                             </div>
                         </div>

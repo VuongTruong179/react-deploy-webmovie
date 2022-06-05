@@ -15,6 +15,18 @@
     display: flex;
 }
 
+.card-text-title {
+    display: block;
+    width: 9rem;
+    height: 1.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Source Sans Pro;
+    font-weight: 700;
+    color: black;
+}
+
 .card-img-bottom {
     width: 5rem;
     height: 6rem;
@@ -33,7 +45,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width:768px) {
     .container-bottom-right {
         margin-top: 1rem;
 

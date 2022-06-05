@@ -1,10 +1,68 @@
 import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import { Container, Row, Col, ListGroup, Form, Button } from "react-bootstrap";
 import './createAccout.css'
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css"
 
-class CreateAccout extends React.Component {
-    render() {
-        return (
+const CreateAccout = () => {
+    const formik = useFormik({
+        initialValues: {
+            email: "",
+            name: "",
+            password: "",
+            confirmedPassword: "",
+        },
+        validationSchema: Yup.object({
+            name: Yup.string()
+                .required("Required")
+                .min(4, "Must be 4 characters or more"),
+            email: Yup.string()
+                .required("Required")
+                .matches(
+                    /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+                    "Please enter a valid email address"
+                ),
+            password: Yup.string()
+                .required("Required")
+                .matches(
+                    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]{7,19}$/,
+                    "Password must be 7-19 characters and contain at least one letter, one number and a special character"
+                ),
+            confirmedPassword: Yup.string()
+                .required("Required")
+                .oneOf([Yup.ref("password"), null], "Password must match"),
+        }),
+
+        onSubmit: (values, { resetForm }) => {
+            toast.success('Create Accout Success', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+            resetForm({ values: '' });
+        },
+    });
+
+    return (
+        <>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+
             <Container>
                 <Row>
                     <Col className="create-lerf" xs={12} md={3}>
@@ -26,25 +84,45 @@ class CreateAccout extends React.Component {
                         </div>
 
 
-                        <Form>
+                        <Form onSubmit={formik.handleSubmit}>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Username</Form.Label>
-                                <Form.Control type="user" placeholder="Enter use login" />
+                                <Form.Control value={formik.values.name}
+                                    onChange={formik.handleChange} id="name" type="text" placeholder="Enter use login" />
+                                {formik.errors.name && (
+                                    <p className="errorMsg"> {formik.errors.name} </p>
+                                )}
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
-                                <Form.Label>Password (4 characters minimum)</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Label >Password</Form.Label>
+                                <Form.Control value={formik.values.password}
+                                    onChange={formik.handleChange} id="password" name="password" type="text" placeholder="Password" />
+                                {formik.errors.password && (
+                                    <p className="errorMsg"> {formik.errors.password} </p>
+                                )}
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Form.Label>Password Confirm</Form.Label>
-                                <Form.Control type="password" placeholder="Password" />
+                                <Form.Control type="text" id="confirmedPassword" name="confirmedPassword" value={formik.values.confirmedPassword} onChange={formik.handleChange}
+                                    placeholder="Confirm your password" />
+                                {formik.errors.confirmedPassword && (
+                                    <p className="errorMsg"> {formik.errors.confirmedPassword} </p>
+                                )}
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="user" placeholder="Email" />
+                                <Form.Control type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formik.values.email}
+                                    onChange={formik.handleChange}
+                                    placeholder="Enter your email" />
+                                {formik.errors.email && (
+                                    <p className="errorMsg"> {formik.errors.email} </p>
+                                )}
                             </Form.Group>
 
                             <p>By clicking the "Sign up" button below, I certify that I have read and agree to the TMDB terms of use and privacy policy.</p>
@@ -57,8 +135,9 @@ class CreateAccout extends React.Component {
                 </Row>
 
             </Container>
-        )
-    }
+        </>
+    )
 }
+
 
 export default CreateAccout

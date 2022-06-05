@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import axios from "axios";
+import Moment from "react-moment";
 
 class TvShow extends React.Component {
 
@@ -63,20 +64,26 @@ class TvShow extends React.Component {
 
                                     {categoryMovie && categoryMovie.length > 0 &&
                                         categoryMovie.map((item, index) => {
-                                            let link = `/detail/${item.id}`
+                                            let link = `/detailMovie/${item.id}`
                                             let img = `https://image.tmdb.org/t/p/original${item.poster_path}`
                                             return (
                                                 index < 20 &&
                                                 <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6">
+
                                                     <Card style={{ "margin-bottom": "20px" }}>
                                                         <Card.Img variant="top" src={img} />
-                                                        <Card.Body key={item.id} style={{ "height": "10.5rem" }}>
+                                                        <Card.Body key={item.id} style={{ "height": "8rem" }}>
                                                             <Card.Title>{item.original_name}</Card.Title>
                                                             <Card.Text>
-                                                                {item.first_air_date}
+                                                                <Moment format="D MMM YYYY" withTitle>
+                                                                    {item.release_date}</Moment>
+                                                            </Card.Text>
+                                                            <Card.Text> <Moment fromNow>
+                                                                {item.release_date}</Moment>
                                                             </Card.Text>
                                                         </Card.Body>
                                                     </Card>
+
                                                 </div>
 
                                             )

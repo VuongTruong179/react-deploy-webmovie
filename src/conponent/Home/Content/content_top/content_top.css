@@ -39,8 +39,24 @@
     font-size: 1rem;
 }
 
+.card-title {
+    font-family: Source Sans Pro;
+    font-weight: 700
+}
+
+.card-title:hover {
+    color: #006cc2;
+}
+
+.card-text {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.6);
+}
+
 .container-img {
-    height: 12.5rem;
+    height: 12rem;
 }
 
 .title-movies h2 {
